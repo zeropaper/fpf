@@ -1,0 +1,33 @@
+{
+  "_links": {
+    "curies": [
+      {
+        "name": "youtube",
+        "href": "http://www.youtube.com/oembed?url={rel}?format=json",
+        "templated": true
+      },
+      {
+        "name": "vimeo",
+        "href": "http://vimeo.com/api/oembed.json?url={rel}",
+        "templated": true
+      }
+    ]
+  },
+  _embedded: {
+    "repository": [
+      {
+        "_links": {
+          "self": {
+            "href": "https://",
+            "title": "Example FPF playlist"
+          }
+        }
+      },
+      "path": "example.fpf.json",
+      "url": ""
+    ]
+  },
+  "items": [
+    
+  ]
+}
