@@ -5,12 +5,12 @@ Forkable Playlist Format
 
 # Aims and goals
 
-Provide a nerdy way to share links to media using source version control.
+Provide a nerdy way to share links to web viewable media using source version control or HTTP(S).
 
 
 # How 
 
-Based on structured text formats like JSON, XML or YAML and Git.
+Based on structured text formats like JSON or XML, Git and when available oEmbed linking.
 
 
 # Why
@@ -22,37 +22,36 @@ tracks of changes and links can be made between repositories.
 
 # Structure
 
+The structure of a fpf file should limit redundancies and this is why HAL way of structuring data is used.
+
+
 ```json
 {
   "_links": {
-    "repository": {
-      "href": "..."
-    }
-  },
-  "_embedded": {
-    "media": [
+    "curies": [
       {
-        "provider": "youtube",
-        "provider_url": "Tu2_9L1Qp20"
+        "name": "youtube",
+        "href": "http://www.youtube.com/oembed?url={rel}?format=json",
+        "templated": true
       },
-      {
-        "provider": "vimeo",
-        "provider_url": "Tu2_9L1Qp20"
-      },
-      {
-        "provider": "url",
-        ""
-      }
-    ],
-    "provider": [
       {
         "name": "vimeo",
-        "oembed": true
+        "href": "http://vimeo.com/api/oembed.json?url={rel}",
+        "templated": true
       }
-    ]
+    ],
+    "repository": {
+      "href": "..."
+    },
+    "youtube:some-other-media-id": {
+    },
+    "vimeo:some-media-id": {
+      "href": ""
+    }
   },
   "items": [
-    
+    "some-media-id",
+    "some-other-media-id"
   ]
 }
 
@@ -61,6 +60,8 @@ tracks of changes and links can be made between repositories.
 
 # Links
 
+- [HAL](//stateless.co/hal_specification.html)
 - [JSON](//json.org)
 - [YAML](//yaml.org)
 - [Git](//git-scm.com)
+- [oEmbed](//oembed.com)
