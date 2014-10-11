@@ -1,5 +1,9 @@
 {
   "_links": {
+    "self": {
+      "href": "https://rawgithub.com/zeropaper/fpf/master/example.fpf.json",
+      "title": "Example FPF playlist"
+    },
     "curies": [
       {
         "name": "youtube",
@@ -13,18 +17,14 @@
       }
     ]
   },
-  _embedded: {
+  "_embedded": {
     "repository": [
       {
         "_links": {
-          "self": {
-            "href": "https://",
-            "title": "Example FPF playlist"
-          }
-        }
-      },
-      "path": "example.fpf.json",
-      "url": ""
+        },
+        "path": "example.fpf.json",
+        "url": "git@github.com:zeropaper/fpf.git"
+      }
     ]
   },
   "items": [
